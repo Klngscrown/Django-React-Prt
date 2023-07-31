@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view, permission_classes, action
 from .models import User
 from .serializers import UserSerializer
 
+#veiwset으로 구현하기
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
