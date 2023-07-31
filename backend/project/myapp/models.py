@@ -4,7 +4,10 @@ from django.db import models
 from django.db import models
 
 class User(models.Model):
-    id = models.CharField(primary_key=True, max_length=36)
+    id = models.UUIDField(primary_key=True, max_length=36)
     name = models.CharField(max_length=100)
     age = models.IntegerField()
-    photo = models.ImageField(upload_to='user_photos/')
+    photo = models.ImageField(upload_to='photos/')
+    
+    def __str__(self):
+        return self.id
